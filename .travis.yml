@@ -3,8 +3,8 @@ services:
  - docker
 
 script:
- - docker build -t mannydesigns/node .
- - docker images mannydesigns/node
+ - docker build -t isunix1/node .
+ - docker images isunix1/node
 
 
 before_deploy:
@@ -12,7 +12,7 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push mannydesigns/node
+  script: docker push isunix1/node
   on:
     branch: master
 
