@@ -5,3 +5,14 @@ services:
 script:
  - docker build -t mannydesigns/node .
  - docker images mannydesigns/node
+
+
+before_deploy:
+ - docker login -u isunix1 -p dockertest1
+
+deploy:
+  provider: script
+  script: docker push mannydesigns/node
+  on:
+    branch: master
+
